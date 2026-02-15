@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Camera, Loader2, ArrowLeft, FileDown, Trash2, ReceiptText } from 'lucide-react';
+import { Camera, Loader2, ArrowLeft, FileDown, Trash2, ReceiptText, Send } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card'; // 카드 컴포넌트 활용
 import ReceiptForm, { ReceiptData } from '@/components/receipt/ReceiptForm';
@@ -117,10 +117,10 @@ export default function ScanPage() {
                             </Button>
                             <Button 
                                 onClick={handleDownloadExcel}
-                                className="bg-[#1E3A8A] text-white flex items-center gap-2 px-3 py-1 rounded-full text-sm font-bold shadow-md"
+                                className="bg-[#1E3A8A] text-white flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold shadow-md active:scale-95 transition-transform"
                             >
-                                <FileDown className="w-4 h-4" />
-                                엑셀받기
+                                <Send className="w-4 h-4" /> {/* 아이콘 변경 */}
+                                엑셀 전송 {/* 문구 변경 */}
                             </Button>
                         </>
                     )}
