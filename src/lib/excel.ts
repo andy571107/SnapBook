@@ -47,10 +47,15 @@ export const downloadReceiptsToExcel = async (data: ReceiptData[]): Promise<void
           text: `${today}자 영수증 내역입니다.`,
         };
 
-        if (navigator.canShare && navigator.canShare(dataToShare)) {
+        try {
+          // 파일 공유가 가능한지 묻지 않고 일단 share를 시도해봅니다.
           await navigator.share(dataToShare);
-          return; // 공유 창 띄우기 성공 시 종료
+          return; 
+        } catch (shareError) {
+          // 여기서 에러가 나면 자연스럽게 아래의 다운로드 로직이 실행됩니다.
+          console.log('공유 창 띄우기 실패:', shareError);
         }
+
       } catch (shareError) {
         console.log('공유 중단 또는 미지원:', shareError);
         // 에러가 나면 아래의 일반 다운로드 로직으로 자동 이관됩니다.
