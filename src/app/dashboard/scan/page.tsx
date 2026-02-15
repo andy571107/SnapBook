@@ -122,6 +122,12 @@ export default function ScanPage() {
                                 <Send className="w-4 h-4" /> {/* 아이콘 변경 */}
                                 엑셀 전송 {/* 문구 변경 */}
                             </Button>
+
+                            {/* 카톡 사용자를 위한 안내 문구 추가 */}
+                            <p className="mt-3 text-[10px] text-gray-400">
+                                카카오톡에서 전송/다운로드가 안 될 경우,<br/>
+                                우측 하단 <span className="font-bold text-gray-600">"···"</span> 버튼 클릭 후 <span className="font-bold text-gray-600">"다른 브라우저로 열기"</span>를 해주세요.
+                            </p>
                         </>
                     )}
                 </div>
